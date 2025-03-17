@@ -201,7 +201,7 @@ const reviews = ref([])
 
 onMounted(async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/reviews')
+    const response = await fetch('/api/reviews')
     if (!response.ok) {
       throw new Error('获取评论失败')
     }
@@ -233,7 +233,7 @@ const submitReview = async () => {
   
   // 保存到本地文件
   try {
-    const response = await fetch('http://localhost:3000/api/reviews', {
+    const response = await fetch('/api/reviews', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
